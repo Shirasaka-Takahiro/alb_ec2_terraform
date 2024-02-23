@@ -18,10 +18,6 @@ output "public_ip" {
   value = module.dev.public_ip
 }
 
-output "private_ip" {
-  value = module.dev.private_ip
-}
-
 output "alb_dns_name" {
   value = module.dev.alb_dns_name
 }

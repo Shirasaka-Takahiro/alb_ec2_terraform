@@ -1,10 +1,12 @@
 ■Set-Up
 1. Create S3 for tfstate
+<br />
 ex)example-dev-alb-accesslog-bucket
 
 ■Resources
 <br />
 EC2(web, db) x 2
+<br />
 ALb x 1(HTTP Listener only)
 
 ■Deploy

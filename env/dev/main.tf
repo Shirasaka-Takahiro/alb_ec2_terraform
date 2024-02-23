@@ -1,22 +1,27 @@
 provider "aws" {
   profile = "terraform-user"
-  region  = var.regions["tokyo"]
+  region     = var.regions["tokyo"]
 }
 
 provider "aws" {
   profile = "terraform-user"
-  alias   = "us-east-1"
-  region  = var.regions["virginia"]
+  alias      = "us-east-1"
+  region     = var.regions["virginia"]
 }
 
 terraform {
   required_version = "~> 1.3.6"
-  backend "s3" {
-    bucket  = "example-dev-tfstate-bucket"
-    region  = "ap-northeast-1"
-    key     = "dev.tfstate"
-    profile = "terraform-user"
+  #backend "s3" {
+  #  bucket  = "example-dev-tfstate-bucket2"
+  #  region  = "ap-northeast-1"
+  #  key     = "dev.tfstate"
+  #  profile = "terraform-user"
+  #}
+
+  backend "local" {
+    path   = "terraform.tfstate"
   }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"

@@ -85,7 +85,7 @@ variable "ami" {
 variable "instance_type" {
   description = "The type of instance"
   type        = string
-  default     = "t3.micro"
+  default     = "m4.large"
 }
 
 variable "volume_type" {
